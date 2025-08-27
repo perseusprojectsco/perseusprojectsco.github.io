@@ -19,58 +19,165 @@
 
   <style>
     :root{
-      --bg1:#111; --bg2:#333;
-      --gold:#f1c40f;
-      --ink:#222; --muted:#666;
-      --btn:#ffffff; --btnText:#111;
+      --bg1:#111; 
+      --bg2:#333; 
+      --gold:#B8860B; 
+      --ink:#222; 
+      --muted:#666; 
+      --btn:#ffffff; 
+      --btnText:#111; 
       --ring:rgba(0,0,0,.12);
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background:#f5f7fa; color:var(--ink); text-align:center;
-    }
-    header{
-      background: linear-gradient(135deg, var(--bg1), var(--bg2));
-      color:#fff; padding:64px 20px 48px;
-    }
-    .logo{
-      width:min(520px, 80vw); height:auto; display:block; margin:0 auto 16px;
-      filter: drop-shadow(0 8px 24px rgba(0,0,0,.35));
-    }
-    h1{margin:10px 0 6px; font-size:clamp(28px,3.4vw,40px); letter-spacing:.4px}
-    .tagline{color:var(--gold); font-size:clamp(18px,2.2vw,22px); margin:6px 0 0}
 
-    main{max-width:980px; margin:0 auto; padding:36px 20px}
-    .blurb{font-size:18px; line-height:1.6; color:#333; margin:0 auto 28px; max-width:740px}
+    *{box-sizing:border-box}
+
+    body{
+      margin:0; 
+      font-family:"Segoe UI", Roboto, Arial, sans-serif;
+      background:#f5f7fa; 
+      color:var(--ink); 
+      text-align:center;
+    }
+
+    header{
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:#fff; 
+      padding:64px 20px 48px;
+    }
+
+    .logo{
+      width:min(520px,80vw); 
+      height:auto; 
+      display:block; 
+      margin:0 auto 16px; 
+      filter:drop-shadow(0 8px 24px rgba(0,0,0,.35));
+    }
+
+    h1{
+      margin:10px 0 6px; 
+      font-size:clamp(28px,3.4vw,40px); 
+      letter-spacing:.4px
+    }
+
+    .tagline{
+      color:var(--gold); 
+      font-size:clamp(18px,2.2vw,22px); 
+      margin:6px 0 0
+    }
+
+    main{
+      max-width:1080px; 
+      margin:0 auto; 
+      padding:36px 20px
+    }
+
+    .blurb{
+      font-size:18px; 
+      line-height:1.6; 
+      color:#333; 
+      margin:0 auto 28px; 
+      max-width:740px
+    }
 
     /* Social buttons */
     .social-grid{
-      display:flex; flex-wrap:wrap; gap:14px; justify-content:center;
-      margin-top:10px;
+      display:flex; 
+      flex-wrap:wrap; 
+      gap:14px; 
+      justify-content:center; 
+      margin-top:10px
     }
+
     .btn{
-      appearance:none; border:none; cursor:pointer; text-decoration:none;
-      background:var(--btn); color:var(--btnText);
-      padding:12px 16px; border-radius:12px; font-weight:600; font-size:16px;
-      display:inline-flex; align-items:center; gap:10px;
-      box-shadow:0 2px 0 var(--ring), 0 6px 18px rgba(0,0,0,.06);
+      appearance:none; 
+      border:none; 
+      cursor:pointer; 
+      text-decoration:none; 
+      background:var(--btn); 
+      color:var(--btnText);
+      padding:12px 16px; 
+      border-radius:12px; 
+      font-weight:600; 
+      font-size:16px; 
+      display:inline-flex; 
+      align-items:center; 
+      gap:10px;
+      box-shadow:0 2px 0 var(--ring), 0 6px 18px rgba(0,0,0,.06); 
       transition:transform .08s ease, box-shadow .2s ease, background .2s ease;
     }
-    .btn:hover{transform:translateY(-1px); box-shadow:0 2px 0 var(--ring), 0 12px 24px rgba(0,0,0,.12)}
-    .btn svg{width:20px; height:20px}
 
-    /* Brand accents on hover */
+    .btn:hover{
+      transform:translateY(-1px); 
+      box-shadow:0 2px 0 var(--ring), 0 12px 24px rgba(0,0,0,.12)
+    }
+
+    .btn svg{width:20px; height:20px}
     .btn.fb:hover{background:#1877F2; color:#fff}
     .btn.ig:hover{background:#E1306C; color:#fff}
     .btn.li:hover{background:#0077B5; color:#fff}
 
-    footer{margin:40px 0 24px; color:#8a8f99; font-size:14px}
+    /* Instagram Section */
+    .section{
+      margin:60px auto 40px; 
+      padding:0 20px; 
+      max-width:1080px;
+    }
+
+    .section h2{
+      font-size:clamp(22px, 2.8vw, 30px); 
+      margin-bottom:18px; 
+      color:#111; 
+      font-weight:600;
+    }
+
+    .snapwidget-widget{
+      width:100% !important; 
+      max-width:1080px; 
+      border-radius:14px; 
+      overflow:hidden; 
+      box-shadow:0 2px 20px rgba(0,0,0,0.08);
+    }
+
+    .insta-cta{
+      margin-top:14px; 
+      font-size:15px; 
+      color:#555;
+    }
+
+    .insta-cta a{
+      color:var(--gold); 
+      font-weight:600; 
+      text-decoration:none; 
+      border-bottom:2px solid transparent; 
+      transition:all 0.25s ease;
+    }
+
+    .insta-cta a:hover{
+      color:#111; 
+      border-bottom:2px solid var(--gold);
+    }
+
+    /* Global link hover effect */
+    a{
+      color:var(--gold); 
+      text-decoration:none; 
+      transition:all 0.25s ease;
+    }
+
+    a:hover{
+      color:#111; 
+      border-bottom:2px solid var(--gold);
+    }
+
+    footer{
+      margin:40px 0 24px; 
+      color:#8a8f99; 
+      font-size:14px
+    }
   </style>
 </head>
 <body>
   <header>
-    <!-- Ensure logo.png (your official logo) is in the repo root -->
     <img src="logo.png" alt="Perseus Projects Co. Logo" class="logo" />
     <h1>Perseus Projects Co.</h1>
     <p class="tagline">Your project, our expertise.</p>
@@ -88,19 +195,38 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.49 17.52 2 12 2S2 6.49 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.19 2.23.19v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.97h-2.34v7.03C18.34 21.21 22 17.06 22 12.06z"/></svg>
         Facebook
       </a>
-
       <!-- Instagram -->
       <a class="btn ig" href="https://www.instagram.com/perseus_projectsco/" target="_blank" rel="noopener" aria-label="Visit us on Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5m10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3m-5 3.8A5.2 5.2 0 1111.8 18 5.2 5.2 0 0112 7.8m0 2A3.2 3.2 0 1015.2 13 3.2 3.2 0 0012 9.8m5.55-2.85a1.25 1.25 0 11-1.25 1.25 1.25 1.25 0 011.25-1.25z"/></svg>
         Instagram
       </a>
-
       <!-- LinkedIn -->
       <a class="btn li" href="https://www.linkedin.com/company/perseus-projects-co/" target="_blank" rel="noopener" aria-label="Visit us on LinkedIn">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 3A2.94 2.94 0 0122 6v12a2.94 2.94 0 01-3 3H5a2.94 2.94 0 01-3-3V6a2.94 2.94 0 013-3h14M8.34 17.34v-7H6v7h2.34M7.16 9.06a1.37 1.37 0 10-.06-2.74 1.37 1.37 0 00.06 2.74M18 17.34v-3.78c0-2.03-1.08-2.98-2.53-2.98a2.18 2.18 0 00-2 1.1h-.06V10.3H11.2v7h2.34v-3.48c0-.92.17-1.82 1.32-1.82s1.13 1.08 1.13 1.88v3.42z"/></svg>
         LinkedIn
       </a>
     </div>
+
+    <!-- Instagram feed section -->
+    <section class="section" id="instagram">
+      <h2>Latest on Instagram</h2>
+      <!-- SnapWidget Embed -->
+      <script src="https://snapwidget.com/js/snapwidget.js"></script>
+      <iframe 
+        src="https://snapwidget.com/embed/1106176" 
+        class="snapwidget-widget" 
+        allowtransparency="true" 
+        frameborder="0" 
+        scrolling="no" 
+        style="height:600px;" 
+        title="Perseus Projects Co. Instagram">
+      </iframe>
+      <div class="insta-cta">
+        → <a href="https://www.instagram.com/perseus_projectsco/" target="_blank" rel="noopener">
+          Follow us on Instagram
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer>
